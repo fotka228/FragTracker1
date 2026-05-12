@@ -1,0 +1,33 @@
+﻿@model IEnumerable<FragTracker.Models.ProPlayer>
+
+@{
+    ViewData["Title"] = "Список гравців";
+}
+
+<h1>Кіберспортсмени</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Додати нового гравця</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Нікнейм</th>
+            <th>Команда</th>
+            <th>Гра</th>
+            <th>Рейтинг</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nickname</td>
+                <td>@item.Team</td>
+                <td>@item.Game</td>
+                <td>@item.Rating</td>
+            </tr>
+        }
+    </tbody>
+</table>
